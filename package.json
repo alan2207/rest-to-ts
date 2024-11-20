@@ -1,0 +1,24 @@
+{
+  "name": "rest-to-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-types": "tsx src/index.ts"
+  },
+  "keywords": [],
+  "author": "Alan Alickovic",
+  "dependencies": {
+    "quicktype-core": "^23.0.170"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "license": "MIT"
+}

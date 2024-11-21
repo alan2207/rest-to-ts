@@ -27,6 +27,7 @@ async function quicktypeJSON(
     rendererOptions: {
       "just-types": "true",
       "runtime-typecheck": "false",
+      "prefer-types": "true",
     },
     inferMaps: true,
     inferEnums: true,

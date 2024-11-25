@@ -2,10 +2,15 @@ export const USERS = [
   {
     id: 1,
     email: "testuser1@example.com",
+    firstName: "John",
+    lastName: "Doe",
+    image: "https://via.placeholder.com/150",
   },
   {
     id: 2,
     email: "testuser2@example.com",
+    firstName: "Jane",
+    lastName: "Doe",
   },
 ];
 

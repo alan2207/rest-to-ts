@@ -1,8 +1,8 @@
-import { type ConfigWithAuth, type EndpointConfig } from "./types";
+import { type ConfigWithAuth, type EndpointConfig } from "../lib/types";
 
 // Sometimes, an endpoint will return different response properties depending on the user data.
 // In this case, you can provide different configurations for different users,
-// and the script will generate the types for each user with the help of the getConfigWithAuth function
+// and the script will generate the types merged together with all the properties.
 
 export const USER1_CONFIG: ConfigWithAuth = {
   credentials: {
@@ -10,6 +10,15 @@ export const USER1_CONFIG: ConfigWithAuth = {
     password: "password",
   },
   config: [
+    {
+      outputPath: "./generated-types/user.ts",
+      rootName: "User",
+      variations: [
+        {
+          url: "http://localhost:3000/user",
+        },
+      ],
+    },
     {
       outputPath: "./generated-types/posts.ts",
       rootName: "Post",
@@ -37,6 +46,15 @@ export const USER2_CONFIG: ConfigWithAuth = {
     password: "password",
   },
   config: [
+    {
+      outputPath: "./generated-types/user.ts",
+      rootName: "User",
+      variations: [
+        {
+          url: "http://localhost:3000/user",
+        },
+      ],
+    },
     {
       outputPath: "./generated-types/posts.ts",
       rootName: "Post",

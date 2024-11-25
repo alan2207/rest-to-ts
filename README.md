@@ -4,11 +4,13 @@ A proof of concept of generating TypeScript types from REST API endpoints.
 
 ## How it works
 
-A configuration is provided in the `lib/config.ts` file with the endpoints you want to generate types for.
+Diagram of the process:
 
-The script will call each endpoint with the provided variations and extract the types from the responses.
+![REST to TS diagram](./_docs/diagram.png)
 
-It uses [quicktype](https://github.com/glideapps/quicktype) to generate the types.
+1. A configuration is provided with the endpoints you want to generate types for.
+2. API calls are made to each endpoint with the provided variations.
+3. The responses are extracted and used to generate the types. It uses [quicktype](https://github.com/glideapps/quicktype) to generate the types.
 
 ## Why?
 
@@ -29,7 +31,7 @@ npm run generate-types
 
 ## Configuration
 
-Configuration is provided in the `lib/config.ts` file.
+Configuration is provided in the `src/config.ts` file.
 
 ## License
 

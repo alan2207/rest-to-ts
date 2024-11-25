@@ -1,5 +1,5 @@
 import { getConfigsWithAuth } from "../lib/auth";
-import { MIRROR_CONFIG, USER1_CONFIG, USER2_CONFIG } from "../lib/config";
+import { MIRROR_CONFIG, USER1_CONFIG, USER2_CONFIG } from "./config";
 import { generateAllTypes } from "../lib/generate-types";
 import { mergeConfigs } from "../lib/helpers";
 

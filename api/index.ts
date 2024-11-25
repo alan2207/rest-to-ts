@@ -20,25 +20,15 @@ app.get("/", (c) => {
 });
 
 // mirror endpoint to test the generated types
-// it will return the id and the query params that are provided in the request url
+// it will return the data that are provided in the request url
 app.get("/mirror/:id", async (c) => {
-  // Get query parameters
   const url = new URL(c.req.url);
   const queryParams = Object.fromEntries(url.searchParams.entries());
 
-  // Build response object
   const responseData = {
     id: c.req.param("id"),
     ...(Object.keys(queryParams).length > 0 && { queryParams }),
   };
-
-  // Set a new cookie
-  setCookie(c, "visited", "true", {
-    path: "/",
-  });
-
-  // Set response headers
-  c.header("X-Custom-Header", "custom-value");
 
   return c.json(responseData);
 });
@@ -94,6 +84,11 @@ async function passUser(c: Context, next: Next) {
 }
 
 app.use("/*", passUser);
+
+app.get("/user", async (c) => {
+  const user = c.get("user");
+  return c.json(user);
+});
 
 app.get("/posts", async (c) => {
   const user = c.get("user");

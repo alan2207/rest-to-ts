@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "start-api": "tsx watch api/index.ts",
-    "generate-types": "tsx lib/generate-types.ts"
+    "generate-types": "tsx src/index.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",

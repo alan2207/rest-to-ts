@@ -9,3 +9,13 @@ export type EndpointConfig = {
   outputPath: string;
   rootName: string;
 };
+
+export type Credentials = {
+  email: string;
+  password: string;
+};
+
+export type ConfigWithAuth = {
+  credentials: Credentials;
+  config: EndpointConfig[];
+};

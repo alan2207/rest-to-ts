@@ -3,7 +3,7 @@ import type { ConfigWithAuth, Credentials, EndpointConfig } from "./types";
 
 const LOGIN_URL = "http://localhost:3000/login";
 
-async function getAuthToken({ email, password }: Credentials) {
+export async function getAuthToken({ email, password }: Credentials) {
   const response = await fetch(LOGIN_URL, {
     method: "POST",
     body: JSON.stringify({ email, password }),

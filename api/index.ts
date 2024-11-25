@@ -44,17 +44,13 @@ app.post("/login", async (c) => {
     throw new HTTPException(401, { message: "Invalid credentials" });
   }
 
-  const exp = Math.floor(Date.now() / 1000) + 60 * 60;
-
   const payload = {
     email,
-    exp,
   };
 
   const token = await sign(payload, "secret");
   setCookie(c, "token", token, {
     httpOnly: true,
-    expires: new Date(exp * 1000),
   });
   return c.json({
     payload,
